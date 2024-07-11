@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-mvvm",
+  "version": "1.0.0",
+  "description": "belajar nodejs mvvm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nodejs-mvvm"
+  },
+  "author": "yusron",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.2"
+  }
+}
