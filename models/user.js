@@ -2,7 +2,7 @@ const db = require('../helpers/service')
 
 class User {
   static async fetchAllUser() {
-    const [rows] = await db.execute('select name, address, username, password from user')
+    const [rows] = await db.execute('select id, name, address, username, password from user')
     return rows
   }
 
