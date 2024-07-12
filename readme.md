@@ -1,4 +1,4 @@
-Here is a README for your Node.js MVVM repository:
+Here is an updated README with the project structure included:
 
 ---
 
@@ -8,14 +8,21 @@ This repository is a learning project focused on implementing the Model-View-Vie
 
 ## Project Structure
 
-- **controllers/**: Contains the controller files.
-- **helpers/**: Utility functions and helpers.
-- **models/**: Data models.
-- **routes/**: API routes.
-- **viewmodel/**: ViewModel files.
-- **views/**: Templates and view files.
-- **index.js**: Entry point of the application.
-- **package.json**: Project metadata and dependencies.
+```plaintext
+nodejs-mvvm/
+│
+├── controllers/        # Controller files
+├── helpers/            # Utility functions and helpers
+├── models/             # Data models
+├── routes/             # API routes
+├── viewmodel/          # ViewModel files
+├── views/              # Templates and view files
+│
+├── .gitignore          # Git ignore file
+├── index.js            # Entry point of the application
+├── package.json        # Project metadata and dependencies
+└── README.md           # Project documentation
+```
 
 ## Installation
 
