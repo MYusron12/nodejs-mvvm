@@ -1,15 +1,20 @@
-class UserView{
-  render(users) {
-    return JSON.stringify(users, null, 2)
-  }
+export const render = (users, responseMessage = "Success", responseCode = 200) => {
+  return {
+    responseMessage,
+    responseCode,
+    data: users,
+  };
+};
 
-  renderDetail(user) {
-    return JSON.stringify(user, null, 2)
-  }
 
-  renderDeleteResponse(status, message, data = null) {
-    return {status,message,data}
-  }
-}
+export const renderDetail = (users, responseMessage = "Success", responseCode = 200) => {
+  return {
+    responseMessage,
+    responseCode,
+    data: users,
+  };
+};
 
-module.exports = new UserView()
+export const renderDeleteResponse = (status, message, data = null) => {
+  return { status, message, data };
+};

@@ -1,22 +1,23 @@
-const User = require('../models/user')
+import { fetchAllUser, findUserById, deleteUserById as deleteUserByIdFunction, createUser as createUserFunction,updateUserById as updateUserByIdFunction } from '../models/user.js';
 
-class UserViewModel{
-  async getAllUser() {
-    return await User.fetchAllUser()
-  }
+export const getAllUser = async () => {
+  return await fetchAllUser();
+};
 
-  async getUserById(id) {
-    return await User.findUserById(id) 
-  }
+export const getUserById = async (id) => {
+  return await findUserById(id);
+};
 
-  async deleteUserById(id) {
-    return await User.deleteUserById(id)
-  }
+export const deleteUserById = async (id) => {
+  return await deleteUserByIdFunction(id);
+};
 
-  async createUser(user) {
-    const userId = await User.createUser(user)
-    return await User.findUserById(userId)
-  }
-}
+export const createUser = async (user) => {
+  const userId = await createUserFunction(user);
+  return await findUserById(userId);
+};
 
-module.exports = new UserViewModel()
+export const updateUserById = async (id, user) => {
+  await updateUserByIdFunction(id, user);
+  return await findUserById(id);
+};
