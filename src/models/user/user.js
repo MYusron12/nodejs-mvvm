@@ -1,4 +1,4 @@
-import db from '../helpers/service.js';
+import db from '../../../helpers/service.js';
 
 export const fetchAllUser = async () => {
   const [rows] = await db.execute('select id, name, address, username, password from user');

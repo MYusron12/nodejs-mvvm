@@ -6,7 +6,6 @@ export const render = (users, responseMessage = "Success", responseCode = 200) =
   };
 };
 
-
 export const renderDetail = (users, responseMessage = "Success", responseCode = 200) => {
   return {
     responseMessage,

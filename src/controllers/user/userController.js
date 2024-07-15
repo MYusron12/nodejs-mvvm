@@ -1,5 +1,5 @@
-import * as UserViewModel from '../viewmodel/userViewModel.js';
-import { render, renderDetail, renderDeleteResponse } from '../views/userView.js';
+import * as UserViewModel from '../../viewmodel/user/userViewModel.js';
+import { render, renderDetail, renderDeleteResponse } from '../../views/user/userView.js';
 
 export const getAllUser = async (req, res) => {
   try {
