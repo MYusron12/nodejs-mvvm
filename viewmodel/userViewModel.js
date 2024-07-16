@@ -1,4 +1,4 @@
-import { fetchAllUser, findUserById, deleteUserById as deleteUserByIdFunction, createUser as createUserFunction,updateUserById as updateUserByIdFunction } from '../../models/user/user.js';
+import { fetchAllUser, findUserById, deleteUserById as deleteUserByIdFunction, createUser as createUserFunction,updateUserById as updateUserByIdFunction } from '../models/user.js';
 
 export const getAllUser = async () => {
   return await fetchAllUser();
