@@ -1,5 +1,6 @@
 import * as UserViewModel from '../viewmodel/userViewModel.js';
 import { render, renderDetail, renderDeleteResponse } from '../views/userView.js';
+import bcrypt from 'bcryptjs'
 
 export const getAllUser = async (req, res) => {
   try {
@@ -38,7 +39,8 @@ export const createUser = async (req, res) => {
     return res.status(400).send('Required');
   }
   try {
-    const user = await UserViewModel.createUser({ name, username, address, password });
+    const hashedPassword = await bcrypt.hash(password, 10)
+    const user = await UserViewModel.createUser({ name, username, address, hashedPassword });
     res.send(renderDetail(user, `User ${user.name} created successfully`, 200));
   } catch (e) {
     res.status(500).send(e.toString());
@@ -51,7 +53,8 @@ export const updateUser = async (req, res) => {
     return res.status(400).send('Required');
   }
   try {
-    const user = await UserViewModel.updateUserById(req.params.id, { name, username, address, password });
+    const hashedPassword = await bcrypt.hash(password, 10)
+    const user = await UserViewModel.updateUserById(req.params.id, { name, username, address, hashedPassword });
     res.send(renderDetail(user, `User ${user.name} updated successfully`, 200));
   } catch (e) {
     res.status(500).send(e.toString());

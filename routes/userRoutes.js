@@ -1,6 +1,9 @@
 import { Router } from 'express';
 const router = Router();
 import { getAllUser, getUserById, createUser, deleteUserById, updateUser } from '../controllers/userController.js';
+import { jwtMiddleware } from '../middlewares/jwtmiddleware.js'
+
+router.use(jwtMiddleware)
 
 router.get('/users', getAllUser);
 router.get('/users/:id', getUserById);
